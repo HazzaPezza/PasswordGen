@@ -31,15 +31,20 @@ while PROGRAM_ON:
             except:
                 print("Error: Please enter an integer number between 8 and 20!")
 
-            # Use a for loop to create a password in the range of characters as specified by the user.
-            for i in range(character_number_input):
-                new_char = choice(AVAILABLE_CHARACTERS)
-                OUTPUT_ANSWER += new_char
+            # Catch if the number being used is too big or too small, generally websites have limits.
+            if character_number_input > 20 or character_number_input < 8:
+                print("Error: Please enter an integer number between 8 and 20!")
 
-            # Output the password on the screen.
-            print("Here is your new password:")
-            print(OUTPUT_ANSWER)
-            check_input = False
+            else:
+                # Use a for loop to create a password in the range of characters as specified by the user.
+                for i in range(character_number_input):
+                    new_char = choice(AVAILABLE_CHARACTERS)
+                    OUTPUT_ANSWER += new_char
+
+                # Output the password on the screen.
+                print("Here is your new password:")
+                print(OUTPUT_ANSWER)
+                check_input = False
 
     # Check whether the user wants to use the application again.
     redo_check = True
